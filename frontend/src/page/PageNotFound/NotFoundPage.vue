@@ -16,7 +16,7 @@
 
 #not-found-page {
   .box {
-    background-color: $bg-app;
+    background-color: $bg-second;
     min-height: 100vh;
     align-items: center;
     @include flexCenter;
