@@ -2,7 +2,9 @@
   <div class="logincv">
     <div class="infor">
       <div class="infor-header">
-        <a href="#"><img src="../../assets/image/logo/topcv-logo.webp" alt="" /></a>
+        <a href="#"
+          ><img src="../../assets/image/logo/topcv-logo.webp" alt=""
+        /></a>
         <h2>Chào mừng bạn trở lại,</h2>
         <p>
           Cùng xây dựng một hồ sơ nổi bật và nhận được các cơ hội sự nghiệp lý
@@ -12,12 +14,16 @@
       <div class="infor-contain">
         <email />
         <div class="infor-contain_login">
-          <button class="infor-contain_login-submit">Đăng Nhập</button>
+          <Button content="Đăng nhập" nodataCSS="btn_green" />
           <p>Hoặc</p>
           <div class="infor-contain_login-social">
-            <button class="facebook"><FacebookOutlined /> Facebook</button>
-            <button class="google"><GoogleOutlined /> Google</button>
-            <button class="linkedin"><AppleOutlined />Linkedin</button>
+            <button class="facebook btn_green">
+              <FacebookOutlined /> Facebook
+            </button>
+            <button class="google btn_green"><GoogleOutlined /> Google</button>
+            <button class="linkedin btn_green">
+              <AppleOutlined />Linkedin
+            </button>
           </div>
         </div>
         <div class="infor-contain_forget">
@@ -49,10 +55,16 @@ import {
 import './Login.scss';
 import drawer from '../../components/drawer.vue';
 import email from '../../components/email.vue';
+import Button from '../../components/Button/Button.vue';
 export default {
   data() {},
-  components: { drawer, email, GoogleOutlined, FacebookOutlined, AppleOutlined },
+  components: {
+    drawer,
+    email,
+    GoogleOutlined,
+    FacebookOutlined,
+    AppleOutlined,
+    Button,
+  },
 };
 </script>
-<style lang="scss" scoped>
-</style>
