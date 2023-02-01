@@ -13,7 +13,6 @@
 </script>
 <style scoped lang="scss">
 @import "@/styles/index.scss";
-
 #not-found-page {
   .box {
     background-color: $bg-second;
