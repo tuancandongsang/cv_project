@@ -8,7 +8,8 @@ import Layout from '../layout/layout.vue';
 export const router = createRouter({
   history: createWebHistory(),
   routes: [
-    { path: '/login', component: Login },
+    { path: '/login', component: Login, name: 'login' },
+    { path: '/sign-up', component: Login, name: 'sign-up' },
     {
       path: '/',
       redirect: '/home',
@@ -17,8 +18,8 @@ export const router = createRouter({
         {
           path: '/home',
           component: Home,
-          name: 'home'
-        }
+          name: 'home',
+        },
       ],
     },
     { path: '/:notFound(.*)', component: NotFound, name: 'NotFound' },

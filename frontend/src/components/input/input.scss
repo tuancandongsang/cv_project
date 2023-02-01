@@ -1,0 +1,29 @@
+@import '../../styles/index.scss';
+
+label {
+    margin-top: 16px;
+    margin-bottom: 4px;
+    display: inline-block;
+}
+
+
+.color_icon {
+    color: $text-green;
+}
+
+.padding_input {
+    padding: 10px;
+
+    span {
+        margin-right: 4px;
+    }
+}
+
+.icon_infor {
+    color: $text-green;
+    padding: 0px !important;
+
+    span {
+        margin-right: 0px !important;
+    }
+}
