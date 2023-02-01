@@ -3,7 +3,7 @@ import NotFound from '../page/PageNotFound/NotFoundPage.vue';
 import Login from '../page/login/login.vue';
 import Home from '../page/home/home.vue';
 import Layout from '../layout/layout.vue';
-import { getJwtToken } from '../utils/helpers';
+// import { getJwtToken } from '../utils/helpers';
 
 export const router = createRouter({
   history: createWebHistory(),
@@ -24,14 +24,14 @@ export const router = createRouter({
     { path: '/:notFound(.*)', component: NotFound, name: 'NotFound' },
   ],
 });
-router.beforeEach((to, from, next) => {
-  const token = getJwtToken();
-  if (!token && to.path !== '/login') {
-    next({ path: '/login' });
-  }
-  if (token && to.path === '/login') {
-    next(from.path);
-  } else {
-    next();
-  }
-});
+// router.beforeEach((to, from, next) => {
+//   const token = getJwtToken();
+//   if (!token && to.path !== '/login') {
+//     next({ path: '/login' });
+//   }
+//   if (token && to.path === '/login') {
+//     next(from.path);
+//   } else {
+//     next();
+//   }
+// });

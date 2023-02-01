@@ -2,7 +2,7 @@
   <div class="login_right">
     <a-carousel autoplay>
       <div class="login_item">
-        <img src="" alt="" />
+        <img src="../assets/image/img_calosel_login/img1_login.webp" alt="" />
         <h4>Công cụ viết CV đẹp Miễn phí</h4>
         <p>
           Nhiều mẫu CV đẹp, phù hợp nhu cầu ứng tuyển các vị trí khác nhau. Dễ
@@ -10,7 +10,7 @@
         </p>
       </div>
       <div class="login_item">
-        <img src="" alt="" />
+        <img src="../assets/image/img_calosel_login/img2_login.webp" alt="" />
         <h4>Bảo mật & An toàn tuyệt đối</h4>
         <p>
           Bạn có thể chủ động bật / tắt trạng thái tìm việc. Nếu trạng thái tắt,
@@ -18,7 +18,7 @@
         </p>
       </div>
       <div class="login_item">
-        <img src="" alt="" />
+        <img src="../assets/image/img_calosel_login/img3_login.webp" alt="" />
         <h4>Hỗ trợ Người tìm việc Nhà</h4>
         <p>
           tuyển dụng chủ động tìm kiếm và liên hệ với bạn qua hệ thống kết nối

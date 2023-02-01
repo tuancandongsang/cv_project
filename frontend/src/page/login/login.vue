@@ -2,7 +2,7 @@
   <div class="logincv">
     <div class="infor">
       <div class="infor-header">
-        <a href="#"><img src="" alt="" /></a>
+        <a href="#"><img src="../../assets/image/logo/topcv-logo.webp" alt="" /></a>
         <h2>Chào mừng bạn trở lại,</h2>
         <p>
           Cùng xây dựng một hồ sơ nổi bật và nhận được các cơ hội sự nghiệp lý
