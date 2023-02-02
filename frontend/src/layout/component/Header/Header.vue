@@ -3,7 +3,7 @@
     <div class="header-img">
       <img src="../../../assets/image/logo/topcv-logo.webp" alt="" />
     </div>
-    <div><DropdownImg /></div>
+    <div><Dropdown1 /></div>
     <div class="header-container">
       <ul class="header-container-nav">
         <!-- <li
@@ -54,9 +54,11 @@
 import './Header.scss';
 import Button from '@/components/Button/Button.vue';
 import { GiftOutlined } from '@ant-design/icons-vue';
+import Dropdown1 from './component/Dropdown/Dropdown.vue';
 import DropdownImg from './component/Dropdown/Dropdown-have-img.vue';
+
 export default {
-  components: { GiftOutlined, Button, DropdownImg },
+  components: { GiftOutlined, Button, DropdownImg, Dropdown1 },
   data() {
     return {
       navBarList: [

@@ -7,7 +7,7 @@
 
 .dropdown-container {
     display: flex;
-    margin-top: 8px;
+    margin-top: 12px;
     width: 500px;
     border-radius: 20px;
 
@@ -26,6 +26,7 @@
 
 .alo {
     background-color: $bg-list-dropdown;
+    margin: 0;
 }
 
 .alo2 {
