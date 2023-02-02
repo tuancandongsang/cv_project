@@ -35,7 +35,7 @@ export default {
     },
     label: {
       type: String,
-      default: 'Text',
+      default: '',
     },
   },
   data() {

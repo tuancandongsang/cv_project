@@ -2,23 +2,30 @@
   <div id="not-found-page">
     <div class="box">
       <h3>404</h3>
-      <p>{{$tc('pagenotfound')}}</p>
+      <p>{{ $tc('pagenotfound') }}</p>
       <RouterLink to="/">
-        <button type="button" class="btn-submit">{{$tc('backtologin')}}</button>
+        <Button content="Home" btn_css="btn_green" />
+        <!-- <button type="button" class="btn-submit">
+          {{ $tc('backtologin') }}
+        </button> -->
       </RouterLink>
     </div>
   </div>
 </template>
 <script >
+import Button from '../../components/Button/Button.vue';
+export default {
+  components: { Button },
+};
 </script>
 <style scoped lang="scss">
-@import "@/styles/index.scss";
+@import '@/styles/index.scss';
 #not-found-page {
   .box {
     background-color: $bg-second;
     min-height: 100vh;
     align-items: center;
-    @include flexCenter;
+    @include flex-justConten-Center;
     flex-direction: column;
 
     h3 {
@@ -36,12 +43,7 @@
 
     button {
       @include borderDefault;
-      padding: 9px 20px;
-      border-radius: 10px;
-      cursor: pointer;
-      @media screen and (max-width: 425px) {
-        width: 150px;
-      }
+      padding: 9px 60px;
 
       &:hover {
         color: $bg-app;

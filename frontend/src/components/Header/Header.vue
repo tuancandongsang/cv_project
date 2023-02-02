@@ -1,7 +1,9 @@
 <template>
-  <div>
-    Header
-  </div>
+  <div class="header">
+      <div class="header-img">
+        <img src="../../assets/image/logo/topcv-logo.webp" alt="">
+      </div>
+    </div>
 </template>
 
 <script>

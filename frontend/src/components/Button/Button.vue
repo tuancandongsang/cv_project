@@ -1,5 +1,5 @@
 <template>
-  <button :class="nodataCSS">{{ content }}</button>
+  <button :class="btn_css">{{ content }}</button>
 </template>
 <script>
 export default {
@@ -9,7 +9,7 @@ export default {
       required: true,
       default: 'Submit',
     },
-    nodataCSS: {
+    btn_css: {
       type: String,
       required: true,
       default: 'btn_green',

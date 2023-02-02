@@ -64,9 +64,9 @@ import {
   AppleOutlined,
 } from '@ant-design/icons-vue';
 import './Login.scss';
-import drawer from '../../components/drawer.vue';
+import drawer from '@/components/Carousel/carousel.vue';
 import FromLogin from './component/FromLogin.vue';
-import Button from '../../components/Button/Button.vue';
+import Button from '@/components/Button/Button.vue';
 export default {
   components: {
     drawer,

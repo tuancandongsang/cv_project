@@ -1,15 +1,15 @@
 <template>
   <div>
-    <label for="email"
+    <label for="search"
       ><b>{{ label }}</b></label
     >
     <a-input
       :placeholder="placeholder"
-      v-model:value="userName"
+      v-model:value="valueSearch"
       class="padding_input"
     >
       <template #prefix>
-        <mail-outlined type="user" class="color_icon" />
+        <search-outlined class="color_icon"  />
       </template>
     </a-input>
   </div>
@@ -17,10 +17,10 @@
 
 <script>
 import './input.scss';
-import { MailOutlined } from '@ant-design/icons-vue';
+import { SearchOutlined  } from '@ant-design/icons-vue';
 export default {
   components: {
-    MailOutlined,
+    SearchOutlined,
   },
   props: {
     placeholder: {
@@ -34,7 +34,7 @@ export default {
   },
   data() {
     return {
-      userName: '',
+      valueSearch: '',
     };
   },
 };

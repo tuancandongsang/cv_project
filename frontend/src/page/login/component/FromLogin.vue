@@ -11,9 +11,9 @@
   </div>
 </template>
 <script>
-import InputUser from '../../../components/input/InputUser.vue';
-import InputPassword from '../../../components/input/inputPassword.vue';
-import InputEmail from '../../../components/input/inputEmail.vue';
+import InputUser from '@/components/input/InputUser.vue';
+import InputPassword from '@/components/input/inputPassword.vue';
+import InputEmail from '@/components/input/inputEmail.vue';
 export default {
   components: {
     InputUser,
