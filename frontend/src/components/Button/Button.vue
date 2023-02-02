@@ -26,4 +26,7 @@ export default {
 .button_second {
   @include btn($btn-default, $text-green, $btn-border);
 }
+.button_grey {
+  @include btn($bg-btn-grey, $text-default, $border-grey);
+}
 </style>
