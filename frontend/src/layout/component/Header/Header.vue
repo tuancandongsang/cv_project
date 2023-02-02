@@ -3,15 +3,27 @@
     <div class="header-img">
       <img src="../../../assets/image/logo/topcv-logo.webp" alt="" />
     </div>
-    <div><Dropdown /></div>
+    <div><DropdownImg /></div>
     <div class="header-container">
       <ul class="header-container-nav">
-        <li
+        <!-- <li
           class="header-container-nav_item"
           v-for="item in navBarList"
           :key="item"
         >
           <b>{{ item }}</b>
+        </li> -->
+        <li class="header-container-nav_item">
+          <b><DropdownImg content="Viec" /></b>
+        </li>
+        <li class="header-container-nav_item">
+          <b>Hồ sơ & CV</b>
+        </li>
+        <li class="header-container-nav_item">
+          <b>Công Ty</b>
+        </li>
+        <li class="header-container-nav_item">
+          <b>Phát triển sự ngiệp</b>
         </li>
         <li class="header-container-nav_item">
           <b>Khui quà vui xuân</b> <span><gift-outlined /></span>
@@ -42,9 +54,9 @@
 import './Header.scss';
 import Button from '@/components/Button/Button.vue';
 import { GiftOutlined } from '@ant-design/icons-vue';
-import Dropdown from './component/Dropdown/Dropdown.vue';
+import DropdownImg from './component/Dropdown/Dropdown-have-img.vue';
 export default {
-  components: { GiftOutlined, Button, Dropdown },
+  components: { GiftOutlined, Button, DropdownImg },
   data() {
     return {
       navBarList: [

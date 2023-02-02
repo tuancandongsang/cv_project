@@ -1,19 +1,35 @@
+@import '../../../../../styles/index.scss';
+
+#components-dropdown-demo-placement .ant-btn {
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
 .dropdown-container {
     display: flex;
-    flex-direction: row;
     margin-top: 8px;
-    max-width: 600px;
+    width: 500px;
+    border-radius: 20px;
 
     &-left {
-        background-color: aquamarine;
-        width: 50%;
+        width: 60%;
     }
 
     &-right {
-        background-color: yellow;
-        width: 50%;
-        img{
-            width: 100%;
-        }
+        width: 40%;
+        background-image: url('../../../../../assets/image/img_header_dropdown/nav-job.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 8px;
     }
+}
+
+.alo {
+    background-color: $bg-list-dropdown;
+}
+
+.alo2 {
+    margin-left: 12px;
+    border-radius: 4px;
+
 }
