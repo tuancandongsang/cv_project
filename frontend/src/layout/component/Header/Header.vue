@@ -1,7 +1,7 @@
 <template>
   <div class="header">
     <div class="header-img">
-      <img src="../../assets/image/logo/topcv-logo.webp" alt="" />
+      <img src="../../../assets/image/logo/topcv-logo.webp" alt="" />
     </div>
     <div><Dropdown /></div>
     <div class="header-container">
@@ -40,9 +40,9 @@
 
 <script>
 import './Header.scss';
-import Button from '../Button/Button.vue';
+import Button from '@/components/Button/Button.vue';
 import { GiftOutlined } from '@ant-design/icons-vue';
-import Dropdown from '../Dropdown/Dropdown.vue';
+import Dropdown from './component/Dropdown/Dropdown.vue';
 export default {
   components: { GiftOutlined, Button, Dropdown },
   data() {

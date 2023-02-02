@@ -28,7 +28,7 @@
           </div>
           <div class="dropdown-container-right">
             <img
-              src="../../assets/image/img_header_dropdown/nav-job.webp"
+              src="../../../../../assets/image/img_header_dropdown/nav-job.webp"
               alt=""
             />
           </div>
