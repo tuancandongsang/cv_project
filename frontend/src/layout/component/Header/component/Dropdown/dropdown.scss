@@ -1,4 +1,4 @@
-@import '../../../../../styles/index.scss';
+@import '@/styles/index.scss';
 
 #components-dropdown-demo-placement .ant-btn {
     margin-right: 8px;
@@ -24,12 +24,12 @@
     }
 }
 
-.alo {
+.item-dropdown {
     background-color: $bg-list-dropdown;
     margin: 0;
 }
 
-.alo2 {
+.link-dropdown {
     margin-left: 12px;
     border-radius: 4px;
 

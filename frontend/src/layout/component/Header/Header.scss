@@ -1,7 +1,7 @@
 @import "@/styles/index.scss";
 .header {
   @include flex-justConten-Between;
-  align-items: flex-end;
+  align-items: center;
   padding: 15px 30px;
   &-img{
     img{

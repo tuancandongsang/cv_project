@@ -2,9 +2,9 @@
   <div class="login">
     <div class="infor">
       <div class="infor-header">
-        <a href="#"
-          ><img src="../../assets/image/logo/topcv-logo.webp" alt=""
-        /></a>
+        <router-link to="/">
+          <img src="../../assets/image/logo/topcv-logo.webp" alt=""
+        /></router-link>
         <h2 v-if="loginOrSingin">Chào mừng bạn trở lại,</h2>
         <h2 v-if="!loginOrSingin">Chào mừng bạn đến với TopCV</h2>
         <p>

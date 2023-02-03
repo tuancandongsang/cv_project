@@ -1,9 +1,8 @@
 <template>
   <div class="header">
     <div class="header-img">
-      <img src="../../../assets/image/logo/topcv-logo.webp" alt="" />
+      <router-link to="/"><img src="../../../assets/image/logo/topcv-logo.webp" alt="" /></router-link>
     </div>
-    <div><Dropdown1 /></div>
     <div class="header-container">
       <ul class="header-container-nav">
         <!-- <li
@@ -14,16 +13,16 @@
           <b>{{ item }}</b>
         </li> -->
         <li class="header-container-nav_item">
-          <b><DropdownImg content="Viec" /></b>
+          <b><DropdownImg content="Việc làm" /></b>
         </li>
         <li class="header-container-nav_item">
-          <b>Hồ sơ & CV</b>
+          <b><DropdownImg content="Hồ sơ & CV" /></b>
         </li>
         <li class="header-container-nav_item">
-          <b>Công Ty</b>
+          <b><DropdownImg content="Công Ty" /></b>
         </li>
         <li class="header-container-nav_item">
-          <b>Phát triển sự ngiệp</b>
+          <b><DropdownImg content="Phát triển sự ngiệp" /></b>
         </li>
         <li class="header-container-nav_item">
           <b>Khui quà vui xuân</b> <span><gift-outlined /></span>
@@ -54,11 +53,10 @@
 import './Header.scss';
 import Button from '@/components/Button/Button.vue';
 import { GiftOutlined } from '@ant-design/icons-vue';
-import Dropdown1 from './component/Dropdown/Dropdown.vue';
 import DropdownImg from './component/Dropdown/Dropdown-have-img.vue';
 
 export default {
-  components: { GiftOutlined, Button, DropdownImg, Dropdown1 },
+  components: { GiftOutlined, Button, DropdownImg },
   data() {
     return {
       navBarList: [

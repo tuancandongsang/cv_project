@@ -6,14 +6,14 @@
         <div class="dropdown-container">
           <div class="dropdown-container-left">
             <a-menu>
-              <a-menu-item class="alo">
-                <div class="alo2">Tim viec</div>
+              <a-menu-item class="item-dropdown">
+                <div class="link-dropdown"><router-link to="/login">Tim viec</router-link></div>
               </a-menu-item>
-              <a-menu-item class="alo">
-                <div class="alo2">Tim viec</div>
+              <a-menu-item class="item-dropdown">
+                <div class="link-dropdown"><router-link to="/login">Tim viec</router-link></div>
               </a-menu-item>
-              <a-menu-item class="alo">
-                <div class="alo2">Tim viec</div>
+              <a-menu-item class="item-dropdown">
+                <div class="link-dropdown"><router-link to="/login">Tim viec</router-link></div>
               </a-menu-item>
             </a-menu>
           </div>
