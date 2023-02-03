@@ -1,31 +1,48 @@
 <template>
-  <div class="logincv">
+  <div class="login">
     <div class="infor">
       <div class="infor-header">
-        <a href="#"><img src="" alt="" /></a>
-        <h2>Chào mừng bạn trở lại,</h2>
+        <router-link to="/">
+          <img src="../../assets/image/logo/topcv-logo.webp" alt=""
+        /></router-link>
+        <h2 v-if="loginOrSingin">Chào mừng bạn trở lại,</h2>
+        <h2 v-if="!loginOrSingin">Chào mừng bạn đến với TopCV</h2>
         <p>
           Cùng xây dựng một hồ sơ nổi bật và nhận được các cơ hội sự nghiệp lý
           tưởng
         </p>
       </div>
       <div class="infor-contain">
-        <email />
+        <FromLogin :loginOrSingin="loginOrSingin" />
+        <p class="infor-contain_accept" v-if="!loginOrSingin">
+          Bằng việc đăng ký tài khoản, bạn đã đồng ý với
+          <a href="#"><b>Điều khoản dịch vụ</b></a> và
+          <a href="#"><b>Chính sách bảo mật</b></a> của chúng tôi
+        </p>
         <div class="infor-contain_login">
-          <button class="infor-contain_login-submit">Đăng Nhập</button>
+          <Button content="Đăng nhập" nodataCSS="btn_green" />
           <p>Hoặc</p>
           <div class="infor-contain_login-social">
-            <button class="facebook"><FacebookOutlined /> Facebook</button>
-            <button class="google"><GoogleOutlined /> Google</button>
-            <button class="linkedin"><AppleOutlined />Linkedin</button>
+            <button class="facebook btn_green">
+              <FacebookOutlined /> Facebook
+            </button>
+            <button class="google btn_green"><GoogleOutlined /> Google</button>
+            <button class="linkedin btn_green">
+              <AppleOutlined />Linkedin
+            </button>
           </div>
         </div>
-        <div class="infor-contain_forget">
+        <div class="infor-contain_forget" v-if="loginOrSingin">
           <p>
             Bạn chưa có tài khoản? <a href="#"><B>Đăng ký ngay</B></a>
           </p>
           <p>
             <a href="#"><b>Quên mật khẩu</b></a>
+          </p>
+        </div>
+        <div class="infor-contain_forget" v-if="!loginOrSingin">
+          <p>
+            Bạn đã có tài khoản? <a href="#"><b>Đăng nhập ngay</b></a>
           </p>
         </div>
         <div>
@@ -47,12 +64,30 @@ import {
   AppleOutlined,
 } from '@ant-design/icons-vue';
 import './Login.scss';
-import drawer from '../../components/drawer.vue';
-import email from '../../components/email.vue';
+import drawer from '@/components/Carousel/carousel.vue';
+import FromLogin from './component/FromLogin.vue';
+import Button from '@/components/Button/Button.vue';
 export default {
-  data() {},
-  components: { drawer, email, GoogleOutlined, FacebookOutlined, AppleOutlined },
+  components: {
+    drawer,
+    FromLogin,
+    GoogleOutlined,
+    FacebookOutlined,
+    AppleOutlined,
+    Button,
+  },
+  data() {
+    return {
+      loginOrSingin: true,
+    };
+  },
+  created() {
+    if (this.$route.name == 'login') {
+      this.loginOrSingin = true;
+    }
+    if (this.$route.name == 'sign-up') {
+      this.loginOrSingin = false;
+    }
+  },
 };
 </script>
-<style lang="scss" scoped>
-</style>

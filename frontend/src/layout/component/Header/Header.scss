@@ -1,0 +1,31 @@
+@import "@/styles/index.scss";
+.header {
+  @include flex-justConten-Between;
+  align-items: center;
+  padding: 15px 30px;
+  &-img{
+    img{
+      height: 50px;
+    }
+  }
+  &-container{
+    &-nav{
+      display: flex;
+      flex: 1;
+      gap: 30px;
+      &_item{
+        display: inline-block;
+      }
+    }
+  }
+  &-login{
+    &_list{
+      display: flex;
+      justify-content: end;
+      gap: 30px;
+      &-item{
+        display: inline-block;
+      }
+    }
+  }
+}

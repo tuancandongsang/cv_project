@@ -3,7 +3,7 @@
 @import './btn.scss';
 
 body {
-  height: 100vh;
+  max-height: 100vh;
   margin: 0;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -18,6 +18,8 @@ body {
 h1,
 h2,
 h3,
+h4,
+h5,
 p {
   margin: 0;
 }

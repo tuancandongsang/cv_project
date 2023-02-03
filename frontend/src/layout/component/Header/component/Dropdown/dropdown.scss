@@ -1,0 +1,36 @@
+@import '@/styles/index.scss';
+
+#components-dropdown-demo-placement .ant-btn {
+    margin-right: 8px;
+    margin-bottom: 8px;
+}
+
+.dropdown-container {
+    display: flex;
+    margin-top: 12px;
+    width: 500px;
+    border-radius: 20px;
+
+    &-left {
+        width: 60%;
+    }
+
+    &-right {
+        width: 40%;
+        background-image: url('../../../../../assets/image/img_header_dropdown/nav-job.webp');
+        background-size: cover;
+        background-repeat: no-repeat;
+        border-radius: 8px;
+    }
+}
+
+.item-dropdown {
+    background-color: $bg-list-dropdown;
+    margin: 0;
+}
+
+.link-dropdown {
+    margin-left: 12px;
+    border-radius: 4px;
+
+}
