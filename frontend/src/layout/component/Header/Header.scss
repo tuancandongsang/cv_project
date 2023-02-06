@@ -36,8 +36,8 @@
       display: flex;
       justify-content: end;
 
-      @media screen and (max-width: 1249px) {
-        // display: none;
+      @media (min-width: 750px) and (max-width: 1249px) {
+        display: none;
       }
 
       gap: 30px;
@@ -60,7 +60,7 @@
   .drawer-icon_menu-right {
     display: none;
 
-    @media screen and (max-width: 1249px) {
+    @media (min-width: 750px) and (max-width: 1249px) {
       font-size: 2rem;
       display: block;
     }

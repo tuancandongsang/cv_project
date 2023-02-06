@@ -7,10 +7,7 @@
       :visible="visible"
       @close="$emit('handleClose', this.visible)"
     >
-      <template #extra>
-        <a-button style="margin-right: 8px" @click="$emit('handleClose', this.visible)">Cancel</a-button>
-        <a-button type="primary" @click="onClose">Submit</a-button>
-      </template>
+      <slot></slot>
       <p>Some contents...</p>
       <p>Some contents...</p>
       <p>Some contents...</p>

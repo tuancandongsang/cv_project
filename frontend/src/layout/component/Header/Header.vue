@@ -6,11 +6,11 @@
       /></router-link>
     </div>
     <div class="drawer-icon_menu-left">
-      <menu-unfold-outlined @click="showDrawer" />
+      <menu-unfold-outlined @click="showDrawerContainer" />
       <div>
         <Drawer
           placement="left"
-          :visible="visible"
+          :visible="visibleContainer"
           @handleClose="handleClose"
         />
       </div>
@@ -58,16 +58,32 @@
         </li>
       </ul>
     </div>
-    <!-- <div class="drawer-icon_menu-right">
+    <div class="drawer-icon_menu-right">
       <menu-fold-outlined @click="showDrawerLogin" />
       <div>
         <Drawer
           placement="right"
-          :visible="visible"
+          :visible="visibleLogin"
           @handleClose="handleClose"
-        />
+        >
+          <ul class="header-login_list">
+            <li class="header-login_list-item">
+              <router-link to="/login"
+                ><Button btn_css="button_second" content="Đăng Nhập"
+              /></router-link>
+            </li>
+            <li class="header-login_list-item">
+              <router-link to="/sign-up">
+                <Button btn_css="btn_green" content="Đăng Ký"
+              /></router-link>
+            </li>
+            <li class="header-login_list-item">
+              <Button btn_css="button_grey" content="Đăng tuyển & tìm hồ sơ" />
+            </li>
+          </ul>
+        </Drawer>
       </div>
-    </div> -->
+    </div>
   </div>
 </template>
 
@@ -76,7 +92,7 @@ import './Header.scss';
 import Button from '@/components/Button/Button.vue';
 import {
   GiftOutlined,
-  // MenuFoldOutlined,
+  MenuFoldOutlined,
   MenuUnfoldOutlined,
 } from '@ant-design/icons-vue';
 import DropdownImg from './component/Dropdown/Dropdown-have-img.vue';
@@ -87,7 +103,7 @@ export default {
     GiftOutlined,
     Button,
     DropdownImg,
-    // MenuFoldOutlined,
+    MenuFoldOutlined,
     Drawer,
     MenuUnfoldOutlined,
   },
@@ -100,18 +116,20 @@ export default {
         'Phát triển sự ngiệp',
         'Công cụ',
       ],
-      visible: false,
+      visibleContainer: false,
+      visibleLogin: false,
     };
   },
   methods: {
-    showDrawer() {
-      this.visible = true;
+    showDrawerLogin() {
+      this.visibleLogin = true;
     },
-    // showDrawerLogin() {
-    //   this.visible = true;
-    // },
+    showDrawerContainer() {
+      this.visibleContainer = true;
+    },
     handleClose() {
-      this.visible = false;
+      this.visibleContainer = false;
+      this.visibleLogin = false;
     },
   },
 };
