@@ -24,11 +24,11 @@
           <p>Hoặc</p>
           <div class="infor-contain_login-social">
             <button class="facebook btn_green">
-              <FacebookOutlined /> Facebook
+              <FacebookOutlined class="display-none_1225" /> Facebook
             </button>
-            <button class="google btn_green"><GoogleOutlined /> Google</button>
+            <button class="google btn_green"><GoogleOutlined class="display-none_1225" /> Google</button>
             <button class="linkedin btn_green">
-              <AppleOutlined />Linkedin
+              <AppleOutlined class="display-none_1225" />Linkedin
             </button>
           </div>
         </div>

@@ -6,7 +6,7 @@
 
     .infor {
         background-color: $bg-default;
-        width: 50%;
+        width: 100%;
         padding: 52px 137px 0px;
 
         &-header {
@@ -115,5 +115,19 @@
         width: 50%;
         background: $bg-second;
         align-self: stretch;
+
     }
+
+    @media screen and (max-width:1200px)  {
+        .carouse {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width:1225px) {
+        .display-none_1225 {
+            display: none;
+        }
+    }
+
 }

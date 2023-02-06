@@ -1,31 +1,68 @@
 @import "@/styles/index.scss";
+
 .header {
   @include flex-justConten-Between;
   align-items: center;
   padding: 15px 30px;
-  &-img{
-    img{
+
+  &-img {
+    @media screen and (max-width: 900px) {
+      display: none;
+    }
+
+    img {
       height: 50px;
     }
   }
-  &-container{
-    &-nav{
+
+  &-container {
+    &-nav {
       display: flex;
       flex: 1;
       gap: 30px;
-      &_item{
+
+      @media screen and (max-width: 750px) {
+        display: none;
+      }
+
+      &_item {
         display: inline-block;
       }
     }
   }
-  &-login{
-    &_list{
+
+  &-login {
+    &_list {
       display: flex;
       justify-content: end;
+
+      @media screen and (max-width: 1249px) {
+        // display: none;
+      }
+
       gap: 30px;
-      &-item{
+
+      &-item {
         display: inline-block;
       }
+    }
+  }
+
+  .drawer-icon_menu-left {
+    display: none;
+
+    @media screen and (max-width: 750px) {
+      font-size: 2rem;
+      display: block;
+    }
+  }
+
+  .drawer-icon_menu-right {
+    display: none;
+
+    @media screen and (max-width: 1249px) {
+      font-size: 2rem;
+      display: block;
     }
   }
 }

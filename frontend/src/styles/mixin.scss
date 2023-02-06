@@ -24,4 +24,7 @@
   border: 1px solid $btn-border;
   color: $btn-text;
   cursor: pointer;
+  &:hover{
+    opacity: 0.8;
+  }
 }

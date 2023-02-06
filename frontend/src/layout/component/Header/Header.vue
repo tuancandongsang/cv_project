@@ -1,7 +1,19 @@
 <template>
   <div class="header">
     <div class="header-img">
-      <router-link to="/"><img src="../../../assets/image/logo/topcv-logo.webp" alt="" /></router-link>
+      <router-link to="/"
+        ><img src="../../../assets/image/logo/topcv-logo.webp" alt=""
+      /></router-link>
+    </div>
+    <div class="drawer-icon_menu-left">
+      <menu-unfold-outlined @click="showDrawer" />
+      <div>
+        <Drawer
+          placement="left"
+          :visible="visible"
+          @handleClose="handleClose"
+        />
+      </div>
     </div>
     <div class="header-container">
       <ul class="header-container-nav">
@@ -46,17 +58,39 @@
         </li>
       </ul>
     </div>
+    <!-- <div class="drawer-icon_menu-right">
+      <menu-fold-outlined @click="showDrawerLogin" />
+      <div>
+        <Drawer
+          placement="right"
+          :visible="visible"
+          @handleClose="handleClose"
+        />
+      </div>
+    </div> -->
   </div>
 </template>
 
 <script>
 import './Header.scss';
 import Button from '@/components/Button/Button.vue';
-import { GiftOutlined } from '@ant-design/icons-vue';
+import {
+  GiftOutlined,
+  // MenuFoldOutlined,
+  MenuUnfoldOutlined,
+} from '@ant-design/icons-vue';
 import DropdownImg from './component/Dropdown/Dropdown-have-img.vue';
+import Drawer from '@/components/Drawer/Drawer.vue';
 
 export default {
-  components: { GiftOutlined, Button, DropdownImg },
+  components: {
+    GiftOutlined,
+    Button,
+    DropdownImg,
+    // MenuFoldOutlined,
+    Drawer,
+    MenuUnfoldOutlined,
+  },
   data() {
     return {
       navBarList: [
@@ -66,7 +100,19 @@ export default {
         'Phát triển sự ngiệp',
         'Công cụ',
       ],
+      visible: false,
     };
+  },
+  methods: {
+    showDrawer() {
+      this.visible = true;
+    },
+    // showDrawerLogin() {
+    //   this.visible = true;
+    // },
+    handleClose() {
+      this.visible = false;
+    },
   },
 };
 </script>
