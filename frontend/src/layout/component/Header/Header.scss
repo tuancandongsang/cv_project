@@ -27,6 +27,17 @@
 
       &_item {
         display: inline-block;
+        cursor: pointer;
+        padding: 13px 5px;
+        border-radius: 8px;
+        line-height: 20px;
+        font-size: 14px;
+        font-weight: 700;
+
+        &:hover {
+          background-color: $bg-second;
+          color: $text-green;
+        }
       }
     }
   }
