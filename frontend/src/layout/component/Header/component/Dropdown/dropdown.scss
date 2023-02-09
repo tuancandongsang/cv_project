@@ -8,15 +8,16 @@
 .dropdown-container {
     display: flex;
     margin-top: 12px;
-    width: 500px;
+    width: 600px;
     border-radius: 20px;
 
     &-left {
         width: 60%;
+        font-size: 16px;
     }
 
     &-right {
-        width: 40%;
+        width: 50%;
         background-image: url('../../../../../assets/image/img_header_dropdown/nav-job.webp');
         background-size: cover;
         background-repeat: no-repeat;
@@ -27,10 +28,15 @@
 .item-dropdown {
     background-color: $bg-list-dropdown;
     margin: 0;
+    border-radius: 4px;
+
+    &:hover {
+        background-color: $bg-app;
+
+    }
 }
 
 .link-dropdown {
-    margin-left: 12px;
+    margin-left: 4px;
     border-radius: 4px;
-
 }

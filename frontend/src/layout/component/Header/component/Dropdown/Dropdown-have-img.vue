@@ -6,18 +6,22 @@
         <div class="dropdown-container">
           <div class="dropdown-container-left">
             <a-menu>
-              <a-menu-item class="item-dropdown">
-                <div class="link-dropdown"><router-link to="/login">Tim viec</router-link></div>
-              </a-menu-item>
-              <a-menu-item class="item-dropdown">
-                <div class="link-dropdown"><router-link to="/login">Tim viec</router-link></div>
-              </a-menu-item>
-              <a-menu-item class="item-dropdown">
-                <div class="link-dropdown"><router-link to="/login">Tim viec</router-link></div>
+              <a-menu-item
+                class="item-dropdown"
+                v-for="item in dataNavbarHeader"
+                v-bind:key="item.tittle"
+              >
+                <div class="link-dropdown">
+                  <router-link :to="{ path: item.link }">{{
+                    item.tittle
+                  }}</router-link>
+                </div>
               </a-menu-item>
             </a-menu>
           </div>
-          <div class="dropdown-container-right"></div>
+          <div class="dropdown-container-right">
+            <img :src="img" alt="" />
+          </div>
         </div>
       </template>
     </a-dropdown>
@@ -30,6 +34,12 @@ export default {
     content: {
       type: String,
       default: '',
+    },
+    dataNavbarHeader: {
+      type: String,
+    },
+    img: {
+      type: String,
     },
   },
 };
