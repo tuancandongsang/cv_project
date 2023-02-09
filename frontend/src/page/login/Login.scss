@@ -1,14 +1,15 @@
-.logincv {
+@import "@/styles/index.scss";
+
+.login {
     display: flex;
-    height: 100vh;
+    height: 100%;
 
     .infor {
-        background-color: #ffffff;
-        width: 50%;
-        padding: 52px 137px;
+        background-color: $bg-default;
+        width: 100%;
+        padding: 52px 137px 0px;
 
         &-header {
-            padding-bottom: 24px;
 
             a {
                 margin-bottom: 32px;
@@ -36,11 +37,19 @@
                 letter-spacing: 0;
                 margin-bottom: 0;
                 width: 85%;
-                color: #6c757d !important;
+                color: $text-second !important;
             }
         }
 
         &-contain {
+            &_accept {
+                margin-top: 4px;
+
+                a {
+                    color: $text-green ;
+                }
+            }
+
             &_login {
                 margin-top: 1rem;
                 display: flex;
@@ -49,20 +58,10 @@
 
                 &-submit {
                     width: 100%;
-                    background: #00b14f;
                     height: 40px;
-                    color: #fff;
-                    outline: none;
-                    border: 1px solid transparent;
-                    border-radius: 0.25rem;
-                    display: inline-block;
                     font-size: 1rem;
-                    font-weight: 400;
                     line-height: 1.5;
                     padding: 0.375rem 0.75rem;
-                    text-align: center;
-                    text-decoration: none;
-                    cursor: pointer;
                 }
 
                 p {
@@ -71,8 +70,7 @@
                 }
 
                 &-social {
-                    display: flex;
-                    justify-content: space-between;
+                    @include flex-justConten-Between;
                     width: 100%;
                     gap: 10px;
                     margin-bottom: 32px;
@@ -80,18 +78,8 @@
                     button {
                         flex: 1;
                         height: 40px;
-                        color: #fff;
-                        outline: none;
-                        border: 1px solid transparent;
-                        border-radius: 0.25rem;
-                        display: inline-block;
-                        font-size: 1rem;
-                        font-weight: 400;
                         line-height: 1.5;
                         padding: 0.375rem 0.75rem;
-                        text-align: center;
-                        text-decoration: none;
-                        cursor: pointer;
                     }
 
                     .facebook {
@@ -109,14 +97,14 @@
             }
 
             &_forget {
-                display: flex;
-                justify-content: space-between;
+                @include flex-justConten-Between;
                 margin-bottom: 16px;
                 padding-bottom: 16px;
-                border-bottom: 1px solid black ;
+                border-bottom: 1px solid $border-grey ;
+
                 p {
                     a {
-                        color: #00b14f;
+                        color: $text-green;
                     }
                 }
             }
@@ -125,7 +113,21 @@
 
     .carouse {
         width: 50%;
-        background: #f2fef6;
-        height: 100vh;
+        background: $bg-second;
+        align-self: stretch;
+
     }
+
+    @media screen and (max-width:1200px)  {
+        .carouse {
+            display: none;
+        }
+    }
+
+    @media screen and (max-width:1225px) {
+        .display-none_1225 {
+            display: none;
+        }
+    }
+
 }

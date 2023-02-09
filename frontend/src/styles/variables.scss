@@ -1,23 +1,25 @@
 // base color
 //btn
-$btn-default:dodgerblue;
-$btn-text: aliceblue;
-$btn-error:#999;
+$btn-green: #00b14f;
+$btn-default: #ffffff;
+$btn-error: #999;
+$btn-border: #00b14f;
 
 // text
-$text:#333;
-$text-error:tomato;
-$text-success:green;
-$text-logo:yellow;
+$text: #333;
+$text-second: #6c757d;
+$text-error: tomato;
+$text-green: #00b14f;
+$text-default: #ffffff;
 
 //bg
-$bg-app:#dedede;
-$bg-input: #fff;
-$bg-noti:tomato;
+$bg-app: #dedede;
+$bg-default: #fff;
+$bg-second: #f2fef6;
+$bg-btn-grey: #212f3f;
 
 // border color
-$bg-border:#999;
+$border-grey: #999;
 
-// :export {
-//   textError: $text-error;
-// }
+//header
+$bg-list-dropdown: #fafafa;

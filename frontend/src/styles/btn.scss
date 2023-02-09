@@ -1,1 +1,11 @@
 @import './variables.scss';
+
+.btn_green{
+    background-color: $btn-green;
+    text-align: center;
+    font-weight: 500;
+    color: $text-default;
+    border-radius: 0.25rem;
+    border: 1px solid transparent;
+    cursor: pointer;
+}

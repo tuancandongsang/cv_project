@@ -6,14 +6,8 @@
 </template>
 
 <script>
-import Header from '@/components/Header/Header.vue';
+import Header from './component/Header/Header.vue';
 export default {
-    components:{Header}
-}
+  components: { Header },
+};
 </script>
-
-<style>
-.layout{
-   height: 90vh;
-}
-</style>
