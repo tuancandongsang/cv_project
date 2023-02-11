@@ -33,19 +33,19 @@
       </div>
     </div>
     <div class="carouse">
-      <drawer />
+      <carousel />
     </div>
   </div>
 </template>
 
 <script>
 import './login-tuyendung.scss';
-import drawer from '@/components/Carousel/carousel.vue';
+import carousel from '@/components/Carousel/carousel-tuyendung.vue';
 import FromLogin from './component/FromLogin.vue';
 import Button from '@/components/Button/Button.vue';
 export default {
   components: {
-    drawer,
+    carousel,
     FromLogin,
     Button,
   },

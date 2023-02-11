@@ -29,4 +29,7 @@ export default {
 .button_grey {
   @include btn($bg-btn-grey, $text-default, $border-grey);
 }
+.button_hindden{
+  visibility: hidden;
+}
 </style>
