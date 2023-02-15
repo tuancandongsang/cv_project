@@ -1,3 +1,8 @@
+<!-- param :{
+  visible: hindden modal
+textOpenModal: title modal
+btn_css: css button modal
+} -->
 <template>
   <div>
     <Button
@@ -6,7 +11,17 @@
       :content="textOpenModal"
       :btn_css="btn_css"
     />
-    <a-modal v-model:visible="visible" title="Basic Modal" @ok="handleOk">
+    <a-modal
+      v-model:visible="visibleComp"
+      :title="textOpenModal"
+      @ok="handleOk"
+      :centered="true"
+      :closable="false"
+      :maskClosable="false"
+      :width="800"
+      :footer="null"
+      class="modalStyle"
+    >
       <slot></slot>
     </a-modal>
   </div>
@@ -18,23 +33,29 @@ export default {
     Button,
   },
   props: {
-    visible1: Boolean,
+    visible: Boolean,
     textOpenModal: String,
     btn_css: String,
   },
   data() {
     return {
-      visible: this.visible1,
+      visibleComp: this.visible,
     };
   },
   methods: {
     showModal() {
-      this.visible = true;
+      this.visibleComp = true;
     },
     handleOk(e) {
       console.log(e);
-      this.visible = false;
+      this.visibleComp = false;
     },
   },
 };
 </script>
+<style scoped>
+.modalStyle {
+  padding: 0;
+  margin: 0;
+}
+</style>

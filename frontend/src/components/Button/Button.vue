@@ -1,3 +1,7 @@
+<!-- param:{
+  content: conten btn
+btn_css: class btn
+} -->
 <template>
   <button :class="btn_css">{{ content }}</button>
 </template>
