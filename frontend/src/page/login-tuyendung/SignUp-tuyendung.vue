@@ -77,7 +77,7 @@ export default {
     checkSignup_tuyendung() {
       this.visible = false;
       console.log(this.$refs.modal.handleOk());
-      this.$router.push('/login');
+      this.$router.push('/login-tuyendung');
     },
   },
 };
