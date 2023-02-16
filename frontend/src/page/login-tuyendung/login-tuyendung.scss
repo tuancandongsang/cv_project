@@ -1,6 +1,6 @@
 @import "@/styles/index.scss";
 
-.login {
+.login-tuyendung {
     display: flex;
     height: 100%;
 
@@ -14,10 +14,11 @@
             a {
                 margin-bottom: 32px;
                 display: block;
-                max-width: 84px;
+
 
                 img {
-                    width: 100%;
+                    height: 30px;
+                    width: 150px;
                     vertical-align: middle;
                     overflow: clip;
                 }
@@ -98,7 +99,7 @@
 
             &_forget {
                 @include flex-justConten-Between;
-                margin-bottom: 16px;
+                margin: 16px 0;
                 padding-bottom: 16px;
                 border-bottom: 1px solid $border-grey ;
 

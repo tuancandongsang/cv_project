@@ -26,7 +26,9 @@
             <button class="facebook btn_green">
               <FacebookOutlined class="display-none_1225" /> Facebook
             </button>
-            <button class="google btn_green"><GoogleOutlined class="display-none_1225" /> Google</button>
+            <button class="google btn_green">
+              <GoogleOutlined class="display-none_1225" /> Google
+            </button>
             <button class="linkedin btn_green">
               <AppleOutlined class="display-none_1225" />Linkedin
             </button>

@@ -62,7 +62,11 @@
             /></router-link>
           </li>
           <li class="header-container-login_list-item">
-            <Button btn_css="button_grey" content="Đăng tuyển & tìm hồ sơ" />
+            <Button
+              @click="handleSignUp"
+              btn_css="button_grey"
+              content="Đăng tuyển & tìm hồ sơ"
+            />
           </li>
         </ul>
       </div>
@@ -209,6 +213,9 @@ export default {
     handleClose() {
       this.visibleContainer = false;
       this.visibleLogin = false;
+    },
+    handleSignUp() {
+      this.$router.push('/signup-tuyendung');
     },
   },
 };

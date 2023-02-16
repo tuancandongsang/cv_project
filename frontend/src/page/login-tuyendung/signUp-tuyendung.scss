@@ -1,0 +1,52 @@
+.modal-singup_tuyendung {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &-header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        h2 {
+            font-size: 24px;
+            font-weight: 600 !important;
+
+        }
+    }
+
+    &-select {
+        width: 100%;
+
+        h3 {
+            text-align: center;
+            font-size: 19px;
+            font-weight: 600;
+            font-family: "Roboto", sans-serif;
+            margin-top: 20px;
+        }
+
+        &-container {
+            width: 100%;
+            display: flex;
+            gap: 80px;
+            align-items: end;
+
+            &-item {
+                width: 100%;
+
+                img {
+                    width: 100%;
+                }
+
+                &-button {}
+            }
+        }
+    }
+}
+
+.signup_tuyendung {
+    &-header {
+        // background-image: url('../../assets/image/img_login_signup_tuyendung/img_header_signup_tuyendung.html');
+    }
+}
