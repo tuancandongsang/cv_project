@@ -51,6 +51,9 @@
         </div>
       </div>
     </Modal>
+    <div class="signup_tuyendung">
+      <div class="signup_tuyendung-header"></div>
+    </div>
   </div>
 </template>
 
