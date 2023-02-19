@@ -1,6 +1,6 @@
 <!-- param:{
-  content: conten btn
-btn_css: class btn
+  content= "conten_btn"
+btn_css= "class_btn"
 } -->
 <template>
   <button :class="btn_css">{{ content }}</button>
@@ -33,7 +33,10 @@ export default {
 .button_grey {
   @include btn($bg-btn-grey, $text-default, $border-grey);
 }
-.button_hindden{
+.button_hindden {
   visibility: hidden;
+}
+.button_none {
+  display: none;
 }
 </style>

@@ -1,3 +1,5 @@
+@import "../../styles/index.scss";
+
 .modal-singup_tuyendung {
     display: flex;
     flex-direction: column;
@@ -47,6 +49,86 @@
 
 .signup_tuyendung {
     &-header {
-        // background-image: url('../../assets/image/img_login_signup_tuyendung/img_header_signup_tuyendung.html');
+        background-image: url('../../assets/image/img_login_signup_tuyendung/singup_image_tuyendung_bg.jpg');
+        background-size: cover;
+        background-position: 0 -200px;
+        width: 100vw;
+        background-repeat: no-repeat;
+        height: 300px;
+        display: flex;
+        flex-direction: column;
+
+        &-navbar {
+            display: flex;
+            justify-content: space-between;
+
+            margin: 8px;
+
+
+            img {
+                width: 160px;
+            }
+        }
+
+        &-body {
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+    }
+
+    &-body {
+        max-width: 850px;
+        margin: -100px auto 0;
+        background-color: $bg-second;
+        padding: 0 50px;
+        border-radius: 20px;
+
+        &_header {
+            display: flex;
+            justify-content: space-between;
+            padding: 16px 0;
+            background-color: $bg-second ;
+            border-bottom: 1px solid $bg-app ;
+        }
+
+        &_header-tittle {
+            margin-top: 8px;
+
+            b {
+                color: $text-error;
+            }
+
+            .alo {
+                color: green;
+                font-weight: 700px;
+                font-size: 20px;
+                border-radius: 50%;
+                padding: 12px;
+                background-color: #e5f7ee;
+            }
+        }
+
+        &-form {
+            &_acc {
+                &-item {
+                    display: flex;
+                    margin-bottom: 10px;
+
+                    p {
+                        width: 200px;
+                        display: block;
+                    }
+
+                    &_right {
+                        flex: 1;
+
+                        p {
+                            width: 100%;
+                            padding: 4px 12px;
+                        }
+                    }
+                }
+            }
+        }
     }
 }
