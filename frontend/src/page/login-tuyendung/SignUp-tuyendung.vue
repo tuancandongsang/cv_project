@@ -97,52 +97,152 @@
           <p>Đã có tài khoản? &nbsp; <b>Đăng nhập ngay</b></p>
         </div>
         <div class="signup_tuyendung-body-form">
-          <form
-            action=""
-            class="signup_tuyendung-body-form"
-            @submit.prevent="myMethod"
+          <a-form
+            ref="formRef"
+            :model="formState"
+            :rules="rules"
+            :label-col="labelCol"
+            :wrapper-col="wrapperCol"
           >
-            <div class="signup_tuyendung-body-form_acc">
-              <h1>TÀI KHOẢN</h1>
-              <div class="signup_tuyendung-body-form_acc-item">
-                <p>Email đăng nhập:</p>
-                <div class="signup_tuyendung-body-form_acc-item_right">
-                  <InputBase
+            <h1>TÀI KHOẢN</h1>
+            <div class="signup_tuyendung-body-form_item">
+              <p>Email đăng nhập:</p>
+              <div class="signup_tuyendung-body-form_item-input">
+                <a-form-item label="" name="email">
+                  <a-input
+                    v-model:value="formState.email"
                     placeholder="Email"
-                    type="text"
-                    v-model="form.email"
                   />
-                  <p v-if="false">Email đăng nhập không được để trống</p>
-                  <p>
-                    *TopCV khuyến nghị đăng ký bằng email công ty (theo tên miền
-                    website công ty) để được hỗ trợ duyệt tin nhanh & đăng tin
-                    không giới hạn.
-                  </p>
-                </div>
-              </div>
-              <div class="signup_tuyendung-body-form_acc-item">
-                <p>Mật khẩu:</p>
-                <div class="signup_tuyendung-body-form_acc-item_right">
-                  <InputBase
-                    placeholder="Mật khẩu từ 6 đến 25 ký tự"
-                    v-model="form.pass"
-                  />
-                  <p v-if="false">Mật khẩu không được để trống</p>
-                </div>
-              </div>
-              <div class="signup_tuyendung-body-form_acc-item">
-                <p>Nhập lại mật khẩu:</p>
-                <div class="signup_tuyendung-body-form_acc-item_right">
-                  <InputBase
-                    placeholder="Nhập lại mật khẩu"
-                    v-model="form.repass"
-                  />
-                  <p v-if="false">Nhập lại mật khẩu không được để trống</p>
-                </div>
+                </a-form-item>
+                <p>
+                  *TopCV khuyến nghị đăng ký bằng email công ty (theo tên miền
+                  website công ty) để được hỗ trợ duyệt tin nhanh & đăng tin
+                  không giới hạn.
+                </p>
               </div>
             </div>
-            <Button content="Hoàn tất" btn_css="btn_green" @click="Submit" />
-          </form>
+            <div class="signup_tuyendung-body-form_item">
+              <p>Mật khẩu:</p>
+              <div class="signup_tuyendung-body-form_item-input">
+                <a-form-item label="" name="pass" has-feedback>
+                  <a-input
+                    v-model:value="formState.pass"
+                    placeholder="Mật khẩu ( từ 6 tới 25 ký tự)"
+                  />
+                </a-form-item>
+              </div>
+            </div>
+            <div class="signup_tuyendung-body-form_item">
+              <p>Nhập lại mật khẩu:</p>
+              <div class="signup_tuyendung-body-form_item-input">
+                <a-form-item label="" name="repass" has-feedback>
+                  <a-input
+                    v-model:value="formState.repass"
+                    placeholder="Nhập lại mật khẩu"
+                  />
+                </a-form-item>
+              </div>
+            </div>
+
+            <h2>THÔNG TIN NHÀ TUYỂN DỤNG</h2>
+            <div class="signup_tuyendung-body-form_item">
+              <p>Họ và tên:</p>
+              <div class="signup_tuyendung-body-form_item-input">
+                <a-form-item label="" name="name" has-feedback>
+                  <a-input
+                    v-model:value="formState.name"
+                    placeholder="Họ và tên"
+                  />
+                </a-form-item>
+              </div>
+            </div>
+            <div class="signup_tuyendung-body-form_item">
+              <p>Số điện thoại cá nhân:</p>
+              <div class="signup_tuyendung-body-form_item-input">
+                <a-form-item label="" name="phone" has-feedback>
+                  <a-input-number
+                    v-model:value="formState.phone"
+                    placeholder="Số điện thoại cá nhân"
+                  />
+                </a-form-item>
+              </div>
+            </div>
+            <div class="signup_tuyendung-body-form_item">
+              <p>Giới tính:</p>
+              <div class="signup_tuyendung-body-form_item-input">
+                <a-form-item label="" v-bind="rules.gender" has-feedback>
+                  <a-select
+                    v-model:value="formState.gender"
+                    placeholder="-Chọn giới tính-"
+                  >
+                    <a-select-option value="male">Male</a-select-option>
+                    <a-select-option value="woman">Woman</a-select-option>
+                  </a-select>
+                </a-form-item>
+              </div>
+            </div>
+            <div class="signup_tuyendung-body-form_item">
+              <p>Công ty:</p>
+              <div class="signup_tuyendung-body-form_item-input">
+                <a-form-item label="" name="company" has-feedback>
+                  <a-input
+                    v-model:value="formState.company"
+                    placeholder="Tên công ty"
+                  />
+                </a-form-item>
+              </div>
+            </div>
+            <div class="signup_tuyendung-body-form_item">
+              <p>Vị trí công tác::</p>
+              <div class="signup_tuyendung-body-form_item-input">
+                <a-form-item label="" v-bind="rules.stateCompany" has-feedback>
+                  <a-select
+                    v-model:value="formState.stateCompany"
+                    placeholder="-Chọn vị trí công tác-"
+                  >
+                    <a-select-option value="1">nhân viên</a-select-option>
+                    <a-select-option value="2">Giám Đốc</a-select-option>
+                    <a-select-option value="3">Tuyển dụng</a-select-option>
+                    <a-select-option value="4">Nhân sự</a-select-option>
+                  </a-select>
+                </a-form-item>
+              </div>
+            </div>
+            <div class="signup_tuyendung-body-form_item">
+              <p>Skype:</p>
+              <div class="signup_tuyendung-body-form_item-input">
+                <a-form-item label="" name="skype">
+                  <a-input
+                    v-model:value="formState.skype"
+                    placeholder="Skype"
+                  />
+                </a-form-item>
+              </div>
+            </div>
+            <div class="signup_tuyendung-body-form_item">
+              <p></p>
+              <div class="signup_tuyendung-body-form_item-input">
+                <a-form-item label="" required>
+                  <a-radio-group v-model:value="formState.check">
+                    <a-radio value="1"
+                      >Tôi đồng ý với
+                      <a href="#"> <b>Điều khoản dịch vụ</b></a> của
+                      TopCV.</a-radio
+                    >
+                  </a-radio-group>
+                </a-form-item>
+              </div>
+            </div>
+
+            <div class="signup_tuyendung-body-form_submit">
+              <a-form-item>
+                <a-button type="primary" @click="onSubmit">Hoàn tất</a-button>
+                <a-button style="margin-left: 10px" @click="cancel"
+                  >Hủy</a-button
+                >
+              </a-form-item>
+            </div>
+          </a-form>
         </div>
       </div>
     </div>
@@ -156,13 +256,11 @@ import {
   CaretDownOutlined,
   PhoneOutlined,
 } from '@ant-design/icons-vue';
-import InputBase from '../../components/input/InputBase.vue';
 import './signUp-tuyendung.scss';
 import Modal from '../../components/Modal/Modal.vue';
 import Button from '../../components/Button/Button.vue';
 export default {
   components: {
-    InputBase,
     Modal,
     Button,
     ArrowLeftOutlined,
@@ -175,11 +273,60 @@ export default {
       visible: true,
       textOpenModal: '',
       btn_css: 'button_none',
-      form: {
-        name: '',
-        pass: '',
-        repass: '',
+      formRef: '',
+      formState: {
+        email: undefined,
+        name: undefined,
+        pass: undefined,
+        repass: undefined,
+        phone: undefined,
+        gender: undefined,
+        check: false,
+        skype: '',
+        stateCompany: undefined,
       },
+      rules: {
+        email: {
+          required: true,
+          message: 'Please input email',
+        },
+        pass: {
+          required: true,
+          message: 'Please input password',
+        },
+        repass: {
+          required: true,
+          message: 'Please input again password',
+        },
+        name: {
+          required: true,
+          message: 'Please input name',
+        },
+        company: {
+          required: true,
+          message: 'Please input company',
+        },
+        phone: {
+          required: true,
+          message: 'Please input degits',
+          trigger: 'blur',
+        },
+        gender: {
+          required: true,
+          message: 'Please select gender',
+          trigger: 'blur',
+        },
+        stateCompany: {
+          required: true,
+          message: 'Please location in company',
+        },
+        check: {
+          required: true,
+          message: 'Please apply',
+        },
+      },
+      labelCol: { span: 4 },
+      wrapperCol: { span: 14 },
     };
   },
   methods: {
@@ -192,11 +339,31 @@ export default {
       // this.$router.push('/login-tuyendung');
       this.$refs.modal.handleOk();
     },
-    Submit() {
-      console.log(this.form);
+    onSubmit() {
+      console.log(this.formState);
+      // this.formRef
+      //   .validate()
+      //   .then(() => {
+      //     console.log('values', this.formState, toRaw(this.formState));
+      //   })
+      //   .catch((error) => {
+      //     console.log('error', error);
+      //   });
+    },
+    cancel() {
+      this.$router.push('/login-tuyendung');
     },
   },
 };
 </script>
-<style scoped>
+<style >
+.ant-row {
+  margin: 0;
+}
+.ant-col-14 {
+  max-width: 100%;
+}
+.ant-input-number {
+  width: 100%;
+}
 </style>
