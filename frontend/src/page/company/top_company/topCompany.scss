@@ -1,0 +1,26 @@
+.company {
+    position: relative;
+
+    &-container {
+        display: flex;
+        justify-content: center;
+    }
+
+    &-header {
+        height: 275px;
+        background-image: linear-gradient(#ccffe1, #fcfffd);
+        display: flex;
+        justify-content: space-between;
+        padding: 24px 100px;
+        gap: 80px;
+        width: 100%;
+
+        &_infor {}
+
+        &-img {
+            img {
+                height: 100%;
+            }
+        }
+    }
+}

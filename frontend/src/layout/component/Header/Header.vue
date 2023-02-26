@@ -147,11 +147,11 @@ export default {
         company: [
           {
             tittle: 'Danh Sách Công Ty',
-            link: '/login',
+            link: '/list-company',
           },
           {
             tittle: 'Top Công Ty',
-            link: '/login',
+            link: '/TopCompany',
           },
         ],
         utility: [
