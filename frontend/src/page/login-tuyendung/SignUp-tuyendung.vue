@@ -52,32 +52,40 @@
       </div>
     </Modal>
     <div class="signup_tuyendung">
-      <div class="signup_tuyendung-header">
-        <div class="signup_tuyendung-header-navbar">
-          <div><ArrowLeftOutlined /> Quay lại</div>
-          <div>
-            <img
-              src="../../assets/image/logo-tuyendung/logo-tuyendung.webp"
-              alt=""
-            />
+      <div class="signup_tuyendung-img">
+        <div class="signup_tuyendung-header">
+          <div class="signup_tuyendung-header-navbar">
+            <div>
+              <span @click="handleBack"><ArrowLeftOutlined /> Quay lại</span>
+            </div>
+            <div>
+              <img
+                src="../../assets/image/logo-tuyendung/logo-tuyendung.webp"
+                alt=""
+              />
+            </div>
           </div>
-        </div>
-        <div class="signup_tuyendung-header-body">
-          <h1>Đăng ký tài khoản Nhà tuyển dụng</h1>
-          <p>
-            Cùng tạo dựng lợi thế cho doanh nghiệp bằng trải nghiệm
-            <br />
-            công nghệ tuyển dụng ứng dụng sâu AI & Hiring Funnel
-          </p>
+          <div class="signup_tuyendung-header-body">
+            <h1>Đăng ký tài khoản Nhà tuyển dụng</h1>
+            <p>
+              Cùng tạo dựng lợi thế cho doanh nghiệp bằng trải nghiệm
+              <br />
+              công nghệ tuyển dụng ứng dụng sâu AI & Hiring Funnel
+            </p>
+          </div>
         </div>
       </div>
       <div class="signup_tuyendung-body">
         <div class="signup_tuyendung-body_header">
           <div>Quy định</div>
-          <div><CaretUpOutlined /></div>
-          <div v-if="false"><CaretDownOutlined /></div>
+          <div v-if="isShowInfor" v-on:click="showInfor">
+            <CaretUpOutlined />
+          </div>
+          <div v-if="!isShowInfor" v-on:click="showInfor">
+            <CaretDownOutlined />
+          </div>
         </div>
-        <div v-if="false" class="signup_tuyendung-body_header-tittle">
+        <div v-if="isShowInfor" class="signup_tuyendung-body_header-tittle">
           Để đảm bảo chất lượng dịch vụ, TopCV
           <b>không cho phép một người dùng tạo nhiều tài khoản khác nhau.</b>
           <br />
@@ -92,7 +100,7 @@
           <br />
           Mọi thắc mắc vui lòng liên hệ Hotline CSKH:
           <p>
-            <span><PhoneOutlined class="alo" /></span> &nbsp; (024) 71079799
+            <span><PhoneOutlined class="phone" /></span> &nbsp; (024) 71079799
           </p>
           <p>Đã có tài khoản? &nbsp; <b>Đăng nhập ngay</b></p>
         </div>
@@ -104,7 +112,7 @@
             :label-col="labelCol"
             :wrapper-col="wrapperCol"
           >
-            <h1>TÀI KHOẢN</h1>
+            <h1 class="title-acc">TÀI KHOẢN</h1>
             <div class="signup_tuyendung-body-form_item">
               <p>Email đăng nhập:</p>
               <div class="signup_tuyendung-body-form_item-input">
@@ -144,7 +152,7 @@
               </div>
             </div>
 
-            <h2>THÔNG TIN NHÀ TUYỂN DỤNG</h2>
+            <h2 class="title-acc">THÔNG TIN NHÀ TUYỂN DỤNG</h2>
             <div class="signup_tuyendung-body-form_item">
               <p>Họ và tên:</p>
               <div class="signup_tuyendung-body-form_item-input">
@@ -195,15 +203,19 @@
             <div class="signup_tuyendung-body-form_item">
               <p>Vị trí công tác::</p>
               <div class="signup_tuyendung-body-form_item-input">
-                <a-form-item label="" v-bind="rules.stateCompany" has-feedback>
+                <a-form-item label="" v-bind="rules.workplace" has-feedback>
                   <a-select
-                    v-model:value="formState.stateCompany"
+                    v-model:value="formState.workplace"
                     placeholder="-Chọn vị trí công tác-"
                   >
-                    <a-select-option value="1">nhân viên</a-select-option>
-                    <a-select-option value="2">Giám Đốc</a-select-option>
-                    <a-select-option value="3">Tuyển dụng</a-select-option>
-                    <a-select-option value="4">Nhân sự</a-select-option>
+                    <a-select-option value="nhân viên"
+                      >nhân viên</a-select-option
+                    >
+                    <a-select-option value="Giám Đốc">Giám Đốc</a-select-option>
+                    <a-select-option value="Tuyển dụng"
+                      >Tuyển dụng</a-select-option
+                    >
+                    <a-select-option value="Nhân sự">Nhân sự</a-select-option>
                   </a-select>
                 </a-form-item>
               </div>
@@ -211,12 +223,7 @@
             <div class="signup_tuyendung-body-form_item">
               <p>Địa điểm làm việc:</p>
               <div class="signup_tuyendung-body-form_item-input">
-                <a-form-item label="" name="place">
-                  <a-input
-                    v-model:value="formState.place"
-                    placeholder="Place"
-                  />
-                </a-form-item>
+                <SelectLocationVue ref="location" />
               </div>
             </div>
             <div class="signup_tuyendung-body-form_item">
@@ -270,6 +277,7 @@ import {
 import './signUp-tuyendung.scss';
 import Modal from '../../components/Modal/Modal.vue';
 import Button from '../../components/Button/Button.vue';
+import SelectLocationVue from '../../components/SelectLocation/SelectLocation.vue';
 export default {
   components: {
     Modal,
@@ -278,9 +286,11 @@ export default {
     CaretDownOutlined,
     CaretUpOutlined,
     PhoneOutlined,
+    SelectLocationVue,
   },
   data() {
     return {
+      isShowInfor: true,
       visible: true,
       textOpenModal: '',
       btn_css: 'button_none',
@@ -293,9 +303,9 @@ export default {
         phone: undefined,
         gender: undefined,
         check: false,
-        place: undefined,
+        workplace: undefined,
+        location: undefined,
         skype: '',
-        stateCompany: undefined,
       },
       rules: {
         email: {
@@ -328,17 +338,13 @@ export default {
           message: 'Please select gender',
           trigger: 'blur',
         },
-        stateCompany: {
-          required: true,
-          message: 'Please location in company',
-        },
         check: {
           required: true,
           message: 'Please apply',
         },
-        place: {
+        workplace: {
           required: true,
-          message: 'Please input place',
+          message: 'Please input workplace',
         },
       },
       labelCol: { span: 4 },
@@ -346,6 +352,12 @@ export default {
     };
   },
   methods: {
+    handleBack() {
+      this.$router.go(-1);
+    },
+    showInfor() {
+      this.isShowInfor = !this.isShowInfor;
+    },
     checkSignup() {
       this.$router.push('/sign-up');
     },
@@ -355,16 +367,9 @@ export default {
       // this.$router.push('/login-tuyendung');
       this.$refs.modal.handleOk();
     },
-    onSubmit() {
-      console.log(this.formState);
-      // this.formRef
-      //   .validate()
-      //   .then(() => {
-      //     console.log('values', this.formState, toRaw(this.formState));
-      //   })
-      //   .catch((error) => {
-      //     console.log('error', error);
-      //   });
+    async onSubmit() {
+      this.formState.location = { ...this.$refs.location.location };
+      console.log('cuoi cung', this.formState);
     },
     cancel() {
       this.$router.push('/login-tuyendung');

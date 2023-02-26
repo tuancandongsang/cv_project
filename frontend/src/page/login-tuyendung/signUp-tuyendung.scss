@@ -48,31 +48,54 @@
 }
 
 .signup_tuyendung {
-    &-header {
+    position: relative;
+
+    &-img {
         background-image: url('../../assets/image/img_login_signup_tuyendung/singup_image_tuyendung_bg.jpg');
         background-size: cover;
         background-position: 0 -200px;
         width: 100vw;
         background-repeat: no-repeat;
         height: 300px;
+        display: block;
+    }
+
+    &-header {
+        background-color: rgba($color: green, $alpha: 0.7);
         display: flex;
         flex-direction: column;
+        height: 100%;
 
         &-navbar {
+            padding: 20px;
             display: flex;
             justify-content: space-between;
-
             margin: 8px;
 
+            span {
+                color: $text-default;
+                font-size: 1rem;
+                font-weight: 400;
+                line-height: 1.5;
+                cursor: pointer;
+            }
 
             img {
                 width: 160px;
+                // cursor: pointer;
             }
         }
 
         &-body {
             margin: 0 auto;
-            margin-top: 20px;
+            color: $text-default;
+            text-align: center;
+
+            h1 {
+                font-weight: 500;
+                line-height: 1.2;
+                color: $text-default;
+            }
         }
     }
 
@@ -93,18 +116,20 @@
 
         &_header-tittle {
             margin-top: 8px;
+            border-bottom: 1px solid $border-grey;
+            padding-bottom: 20px;
 
             b {
                 color: $text-error;
             }
 
-            .alo {
-                color: green;
+            .phone {
+                color: $text-green;
                 font-weight: 700px;
                 font-size: 20px;
                 border-radius: 50%;
                 padding: 12px;
-                background-color: #e5f7ee;
+                background-color: $bg-icon-phone;
             }
         }
 
@@ -112,6 +137,10 @@
             width: 100%;
             position: relative;
             padding-bottom: 100px;
+
+            .title-acc {
+                margin-top: 10px;
+            }
 
             &_item {
                 display: flex;
