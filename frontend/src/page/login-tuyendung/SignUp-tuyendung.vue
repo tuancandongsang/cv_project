@@ -209,6 +209,17 @@
               </div>
             </div>
             <div class="signup_tuyendung-body-form_item">
+              <p>Địa điểm làm việc:</p>
+              <div class="signup_tuyendung-body-form_item-input">
+                <a-form-item label="" name="place">
+                  <a-input
+                    v-model:value="formState.place"
+                    placeholder="Place"
+                  />
+                </a-form-item>
+              </div>
+            </div>
+            <div class="signup_tuyendung-body-form_item">
               <p>Skype:</p>
               <div class="signup_tuyendung-body-form_item-input">
                 <a-form-item label="" name="skype">
@@ -282,6 +293,7 @@ export default {
         phone: undefined,
         gender: undefined,
         check: false,
+        place: undefined,
         skype: '',
         stateCompany: undefined,
       },
@@ -323,6 +335,10 @@ export default {
         check: {
           required: true,
           message: 'Please apply',
+        },
+        place: {
+          required: true,
+          message: 'Please input place',
         },
       },
       labelCol: { span: 4 },

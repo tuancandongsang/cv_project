@@ -4,12 +4,14 @@ import Login from '../page/login/login.vue';
 import login_tuyendung from '../page/login-tuyendung/Login-tuyendung.vue';
 import SignUp_tuyendung from '../page/login-tuyendung/SignUp-tuyendung.vue';
 import Home from '../page/home/home.vue';
+import test from '../page/test.vue';
 import Layout from '../layout/layout.vue';
 // import { getJwtToken } from '../utils/helpers';
 
 export const router = createRouter({
   history: createWebHistory(),
   routes: [
+    { path: '/test', component: test, name: 'test' },
     { path: '/login', component: Login, name: 'login' },
     { path: '/sign-up', component: Login, name: 'sign-up' },
     {
