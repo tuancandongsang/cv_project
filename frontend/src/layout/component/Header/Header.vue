@@ -1,102 +1,104 @@
 <template>
-  <div class="header">
-    <div class="header-img">
-      <router-link to="/"
-        ><img src="../../../assets/image/logo/topcv-logo.webp" alt=""
-      /></router-link>
-    </div>
-    <div class="header-container">
-      <div class="drawer-icon_menu-left">
-        <menu-unfold-outlined @click="showDrawerContainer" />
-        <div>
-          <Drawer
-            placement="left"
-            :visible="visibleContainer"
-            @handleClose="handleClose"
-          />
-        </div>
+  <div class="container-header">
+    <div class="header">
+      <div class="header-img">
+        <router-link to="/"
+          ><img src="../../../assets/image/logo/topcv-logo.webp" alt=""
+        /></router-link>
       </div>
-      <div class="header-container-nav">
-        <ul class="header-container-nav_list">
-          <li class="header-container-nav_list_item">
-            <b
-              ><DropdownImg
-                content="Việc làm"
-                :dataNavbarHeader="dataNavbarHeader.job"
-            /></b>
-          </li>
-          <li class="header-container-nav_list_item">
-            <b
-              ><DropdownImg
-                content="Công ty"
-                :dataNavbarHeader="dataNavbarHeader.company"
-            /></b>
-          </li>
-          <li class="header-container-nav_list_item">
-            <b
-              ><DropdownImg
-                content="Tiện Ích"
-                :dataNavbarHeader="dataNavbarHeader.utility"
-            /></b>
-          </li>
-          <li class="header-container-nav_list_item">
-            <b
-              ><DropdownImg
-                content="Hồ Sơ, Cv"
-                :dataNavbarHeader="dataNavbarHeader.cv"
-                :img="dataNavbarHeader.imgJob"
-            /></b>
-          </li>
-        </ul>
-      </div>
-      <div class="header-container-login">
-        <ul class="header-container-login_list">
-          <li class="header-container-login_list-item">
-            <router-link to="/login"
-              ><Button btn_css="button_second" content="Đăng Nhập"
-            /></router-link>
-          </li>
-          <li class="header-container-login_list-item">
-            <router-link to="/sign-up">
-              <Button btn_css="btn_green" content="Đăng Ký"
-            /></router-link>
-          </li>
-          <li class="header-container-login_list-item">
-            <Button
-              @click="handleSignUp"
-              btn_css="button_grey"
-              content="Đăng tuyển & tìm hồ sơ"
+      <div class="header-container">
+        <div class="drawer-icon_menu-left">
+          <menu-unfold-outlined @click="showDrawerContainer" />
+          <div>
+            <Drawer
+              placement="left"
+              :visible="visibleContainer"
+              @handleClose="handleClose"
             />
-          </li>
-        </ul>
-      </div>
-      <div class="drawer-icon_menu-right">
-        <menu-fold-outlined @click="showDrawerLogin" />
-        <div>
-          <Drawer
-            placement="right"
-            :visible="visibleLogin"
-            @handleClose="handleClose"
-          >
-            <ul class="header-container-login_list">
-              <li class="header-login_list-item">
-                <router-link to="/login"
-                  ><Button btn_css="button_second" content="Đăng Nhập"
-                /></router-link>
-              </li>
-              <li class="header-container-login_list-item">
-                <router-link to="/sign-up">
-                  <Button btn_css="btn_green" content="Đăng Ký"
-                /></router-link>
-              </li>
-              <li class="header-container-login_list-item">
-                <Button
-                  btn_css="button_grey"
-                  content="Đăng tuyển & tìm hồ sơ"
-                />
-              </li>
-            </ul>
-          </Drawer>
+          </div>
+        </div>
+        <div class="header-container-nav">
+          <ul class="header-container-nav_list">
+            <li class="header-container-nav_list_item">
+              <b
+                ><DropdownImg
+                  content="Việc làm"
+                  :dataNavbarHeader="dataNavbarHeader.job"
+              /></b>
+            </li>
+            <li class="header-container-nav_list_item">
+              <b
+                ><DropdownImg
+                  content="Công ty"
+                  :dataNavbarHeader="dataNavbarHeader.company"
+              /></b>
+            </li>
+            <li class="header-container-nav_list_item">
+              <b
+                ><DropdownImg
+                  content="Tiện Ích"
+                  :dataNavbarHeader="dataNavbarHeader.utility"
+              /></b>
+            </li>
+            <li class="header-container-nav_list_item">
+              <b
+                ><DropdownImg
+                  content="Hồ Sơ, Cv"
+                  :dataNavbarHeader="dataNavbarHeader.cv"
+                  :img="dataNavbarHeader.imgJob"
+              /></b>
+            </li>
+          </ul>
+        </div>
+        <div class="header-container-login">
+          <ul class="header-container-login_list">
+            <li class="header-container-login_list-item">
+              <router-link to="/login"
+                ><Button btn_css="button_second" content="Đăng Nhập"
+              /></router-link>
+            </li>
+            <li class="header-container-login_list-item">
+              <router-link to="/sign-up">
+                <Button btn_css="btn_green" content="Đăng Ký"
+              /></router-link>
+            </li>
+            <li class="header-container-login_list-item">
+              <Button
+                @click="handleSignUp"
+                btn_css="button_grey"
+                content="Đăng tuyển & tìm hồ sơ"
+              />
+            </li>
+          </ul>
+        </div>
+        <div class="drawer-icon_menu-right">
+          <menu-fold-outlined @click="showDrawerLogin" />
+          <div>
+            <Drawer
+              placement="right"
+              :visible="visibleLogin"
+              @handleClose="handleClose"
+            >
+              <ul class="header-container-login_list">
+                <li class="header-login_list-item">
+                  <router-link to="/login"
+                    ><Button btn_css="button_second" content="Đăng Nhập"
+                  /></router-link>
+                </li>
+                <li class="header-container-login_list-item">
+                  <router-link to="/sign-up">
+                    <Button btn_css="btn_green" content="Đăng Ký"
+                  /></router-link>
+                </li>
+                <li class="header-container-login_list-item">
+                  <Button
+                    btn_css="button_grey"
+                    content="Đăng tuyển & tìm hồ sơ"
+                  />
+                </li>
+              </ul>
+            </Drawer>
+          </div>
         </div>
       </div>
     </div>
@@ -151,7 +153,7 @@ export default {
           },
           {
             tittle: 'Top Công Ty',
-            link: '/TopCompany',
+            link: '/top-company',
           },
         ],
         utility: [

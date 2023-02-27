@@ -24,7 +24,7 @@ export const router = createRouter({
           name: 'home',
         },
         {
-          path: '/TopCompany',
+          path: '/top-company',
           component: TopCompany,
           name: 'TopCompany',
         },

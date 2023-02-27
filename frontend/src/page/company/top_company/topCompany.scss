@@ -1,26 +1,128 @@
-.company {
-    position: relative;
+@import "@/styles/index.scss";
 
+.company {
     &-container {
         display: flex;
-        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .header_background-header {
+
+            display: flex;
+            justify-content: center;
+            margin: 0 auto;
+            width: 100%;
+            height: 275px;
+            background-image: linear-gradient(#ccffe1, #fcfffd);
+        }
     }
 
     &-header {
-        height: 275px;
-        background-image: linear-gradient(#ccffe1, #fcfffd);
         display: flex;
         justify-content: space-between;
-        padding: 24px 100px;
+        padding: 24px 0;
         gap: 80px;
+        max-width: 1250px;
         width: 100%;
 
-        &_infor {}
+        &_infor {
+            &-list {
+
+                ul {
+                    list-style-type: none;
+                    display: flex;
+                    gap: 20px;
+                    padding: 0;
+                }
+
+                li {
+                    cursor: pointer;
+                    padding-bottom: 8px;
+                    border-bottom: 2px solid $border-grey;
+                }
+
+                h2 {
+                    margin: 20px 0px 10px;
+                    color: $text-green;
+                }
+
+                p {
+                    margin-bottom: 10px;
+                }
+
+                &_search {
+                    display: flex;
+                    justify-content: space-between;
+                    gap: 10px;
+                    width: 100%;
+
+                    .input {
+                        flex: 1;
+                    }
+                }
+            }
+        }
 
         &-img {
             img {
                 height: 100%;
+
             }
+        }
+    }
+
+    &-main {
+        max-width: 1250px;
+
+        &-title {
+            text-align: center;
+            padding: 20px 0;
+            font-size: 24px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+
+        &-body {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(30%, 1fr));
+            grid-gap: 30px;
+
+            &-item {
+                &:hover {
+                    box-shadow: 10px 10px $bg-second;
+                }
+
+                img {
+                    display: block;
+                    width: 100%;
+                    height: 200px;
+                    border-radius: 8px;
+                }
+
+                h5 {
+                    font-size: 1rem;
+                    color: $text-green;
+                    padding: 12px;
+
+                    &:hover {
+                        cursor: pointer;
+                        font-size: 1.2rem;
+                    }
+                }
+
+                p {
+                    padding: 0 12px;
+                    text-align: justify;
+                    height: 200px;
+                    overflow: hidden;
+                }
+            }
+        }
+
+        &_panigation {
+            width: 100%;
+            margin: 20px auto;
+            text-align: center;
         }
     }
 }

@@ -1,5 +1,10 @@
+<!-- 
+placeholder=  'text',
+label= 'text' 
+-->
+
 <template>
-  <div>
+  <div style="width: 100%">
     <label for="search"
       ><b>{{ label }}</b></label
     >
@@ -9,7 +14,7 @@
       class="padding_input"
     >
       <template #prefix>
-        <search-outlined class="color_icon"  />
+        <search-outlined class="color_icon" />
       </template>
     </a-input>
   </div>
@@ -17,7 +22,7 @@
 
 <script>
 import './input.scss';
-import { SearchOutlined  } from '@ant-design/icons-vue';
+import { SearchOutlined } from '@ant-design/icons-vue';
 export default {
   components: {
     SearchOutlined,
