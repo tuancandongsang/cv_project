@@ -6,7 +6,7 @@ placeholder="text"
 <template>
   <a-input
     class="Input"
-    v-model="valueInput"
+    v-model:value="value"
     :placeholder="placeholder"
     :type="type"
   />
@@ -22,11 +22,18 @@ export default {
       type: String,
       default: 'text',
     },
+
   },
+
   data() {
     return {
-      valueInput: '',
+      value: ''
     };
+  },
+  watch: {
+    value() {
+      this.$emit('value-input', this.value)
+    }
   },
   methods: {},
 };

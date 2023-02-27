@@ -65,7 +65,7 @@ import {
   FacebookOutlined,
   AppleOutlined,
 } from '@ant-design/icons-vue';
-import './Login.scss';
+import './login.scss';
 import drawer from '@/components/Carousel/carousel.vue';
 import FromLogin from './component/FromLogin.vue';
 import Button from '@/components/Button/Button.vue';
