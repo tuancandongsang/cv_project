@@ -6,8 +6,24 @@
           <div class="company-header_infor">
             <div class="company-header_infor-list">
               <ul>
-                <li>Danh sách công ty</li>
-                <li>Top công ty</li>
+                <li
+                  @click="() => changeTopOrList('list')"
+                  :class="showTopOrList === 'list' ? 'showTypeCompany' : ''"
+                >
+                  <router-link to="/list-company"
+                    ><span style="color: black"
+                      >Danh sách công ty</span
+                    ></router-link
+                  >
+                </li>
+                <li
+                  @click="() => changeTopOrList('top')"
+                  :class="showTopOrList === 'top' ? 'showTypeCompany' : ''"
+                >
+                  <router-link to="/top-company"
+                    ><span style="color: black"> Top công ty</span></router-link
+                  >
+                </li>
               </ul>
               <h2>Khám phá 100.000+ công ty nổi bật</h2>
               <p>
@@ -38,7 +54,18 @@
         </div>
       </div>
       <div class="company-main">
-        <h2 class="company-main-title">DANH SÁCH CÁC TOP CÔNG TY</h2>
+        <h2
+          class="company-main-title"
+          v-if="showTopOrList === 'top' ? true : false"
+        >
+          DANH SÁCH CÁC TOP CÔNG TY
+        </h2>
+        <h2
+          class="company-main-title"
+          v-if="showTopOrList === 'list' ? true : false"
+        >
+          DANH SÁCH CÁC CÔNG TY NỔI BẬT
+        </h2>
         <div class="company-main-body">
           <div
             class="company-main-body-item"
@@ -71,9 +98,13 @@ export default {
     searchTopCompany() {
       console.log(this.$refs.inputSearch.valueSearch);
     },
+    changeTopOrList(text) {
+      this.showTopOrList = text;
+    },
   },
   data() {
     return {
+      showTopOrList: 'top',
       listTopCompany: [
         {
           url: 'https://static.topcv.vn/top_lists/ee42f870851bdb21f12e43aa0e58e8c3-5c3c0721000a4.jpg',
@@ -140,3 +171,5 @@ export default {
   },
 };
 </script>
+<style>
+</style>
