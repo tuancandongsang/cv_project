@@ -48,13 +48,11 @@
 }
 
 .signup_tuyendung {
-    position: relative;
 
     &-img {
         background-image: url('../../assets/image/img_login_signup_tuyendung/singup_image_tuyendung_bg.jpg');
         background-size: cover;
         background-position: 0 -200px;
-        width: 100vw;
         background-repeat: no-repeat;
         height: 300px;
         display: block;
@@ -65,8 +63,11 @@
         display: flex;
         flex-direction: column;
         height: 100%;
+        align-items: center;
 
         &-navbar {
+            max-width: 1350px;
+            width: 100%;
             padding: 20px;
             display: flex;
             justify-content: space-between;
@@ -82,7 +83,7 @@
 
             img {
                 width: 160px;
-                // cursor: pointer;
+                cursor: pointer;
             }
         }
 

@@ -4,12 +4,7 @@ placeholder="text"
  -->
 
 <template>
-  <a-input
-    class="Input"
-    v-model="valueInput"
-    :placeholder="placeholder"
-    :type="type"
-  />
+  <a-input v-model="valueInput" :placeholder="placeholder" :type="type" />
 </template>
   <script>
 export default {
@@ -28,11 +23,5 @@ export default {
       valueInput: '',
     };
   },
-  methods: {},
 };
 </script>
-<style scoped>
-.Input {
-  border-radius: 8px;
-}
-</style>
