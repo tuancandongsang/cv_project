@@ -6,6 +6,7 @@ import SignUp_tuyendung from '../page/login-tuyendung/SignUp-tuyendung.vue';
 import Home from '../page/home/home.vue';
 import Layout from '../layout/layout.vue';
 import TopCompany from '../page/company/top_company/TopCompany.vue';
+import Laixuatkep from '../page/laixuatkep/Laixuatkep.vue';
 // import ListCompany from '../page/company/list_company/ListCompany.vue';
 
 // import { getJwtToken } from '../utils/helpers';
@@ -32,6 +33,11 @@ export const router = createRouter({
           path: '/list-company',
           component: TopCompany,
           name: 'ListCompany',
+        },
+        {
+          path: '/lai-xuat-kep',
+          component: Laixuatkep,
+          name: 'laixuatkep',
         },
       ],
     },

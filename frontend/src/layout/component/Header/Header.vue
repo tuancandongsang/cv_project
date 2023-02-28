@@ -163,7 +163,7 @@ export default {
           },
           {
             tittle: 'Lãi xuất kép',
-            link: '/login',
+            link: '/lai-xuat-kep',
           },
           {
             tittle: 'Thu nhập cá nhân',
