@@ -159,11 +159,11 @@ export default {
         utility: [
           {
             tittle: 'Gross,<-->Net',
-            link: '/login',
+            link: '/tienich/gross-to-net',
           },
           {
             tittle: 'Lãi xuất kép',
-            link: '/lai-xuat-kep',
+            link: '/tienich/lai-xuat-kep',
           },
           {
             tittle: 'Thu nhập cá nhân',

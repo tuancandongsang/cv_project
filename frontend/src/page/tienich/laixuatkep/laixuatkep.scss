@@ -1,0 +1,101 @@
+@import "@/styles/index.scss";
+
+
+.main {
+    &-recipe {
+
+        &-title {
+            font-size: 24px;
+            line-height: 1.4em;
+            color: $text-green;
+            margin-bottom: 16px;
+        }
+
+        &-decreption {
+            color: $text-second;
+            font-size: .8em;
+            font-style: italic;
+            line-height: 1.6em;
+            text-align: justify;
+            margin-bottom: 48px;
+        }
+
+        &-form {
+            background-color: $bg-app;
+            margin: 0 4px;
+
+            &-item {
+                h3 {
+                    padding: 4px;
+                    background-color: $bg-green;
+                    color: $text-default;
+
+                }
+
+                &-detail {
+                    margin: 12px;
+                    display: flex;
+                    justify-content: space-between;
+                    align-items: center;
+
+                    &-text {
+                        p {
+                            color: $text-second;
+                            font-size: .8em;
+                            font-style: italic;
+                            line-height: 1.6em;
+                            text-align: justify;
+
+                            b {
+                                font-size: 1rem;
+                                font-weight: 500px;
+                                color: $text;
+                            }
+                        }
+                    }
+
+                    &-input {
+                        width: 40%;
+                    }
+                }
+            }
+        }
+
+        &-button {
+            display: flex;
+            justify-content: center;
+
+            &-item {
+                width: 200px;
+                padding: 10px;
+            }
+        }
+    }
+
+    &-maybe {}
+
+    &-detail {
+        p {
+            font-size: 0.9rem;
+        }
+
+        h3 {
+            font-weight: 600;
+            color: $text-green;
+            padding: 0 8px;
+        }
+
+        h4 {
+            font-family: inherit;
+            font-weight: 600;
+            line-height: 1.1;
+            font-size: 18px;
+            padding: 4px 0;
+
+        }
+    }
+}
+
+.Img_congthuctinhlaikep {
+    width: 50%;
+}

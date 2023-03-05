@@ -6,8 +6,7 @@ import SignUp_tuyendung from '../page/login-tuyendung/SignUp-tuyendung.vue';
 import Home from '../page/home/home.vue';
 import Layout from '../layout/layout.vue';
 import TopCompany from '../page/company/top_company/TopCompany.vue';
-import Laixuatkep from '../page/laixuatkep/Laixuatkep.vue';
-// import ListCompany from '../page/company/list_company/ListCompany.vue';
+import LayoutTienich from '../page/tienich/LayoutTienich.vue';
 
 // import { getJwtToken } from '../utils/helpers';
 
@@ -35,9 +34,23 @@ export const router = createRouter({
           name: 'ListCompany',
         },
         {
-          path: '/lai-xuat-kep',
-          component: Laixuatkep,
-          name: 'laixuatkep',
+          path: '/tienich',
+          component: LayoutTienich,
+          name: 'LayoutTienich',
+          redirect: '/lai-xuat-kep',
+          children: [
+            {
+              path: 'lai-xuat-kep',
+              component: () =>
+                import('../page/tienich/laixuatkep/Laixuatkep.vue'),
+              name: 'Laixuatkep',
+            },
+            {
+              path: 'gross-to-net',
+              component: () => import('../page/tienich/gross-net/GrossNet.vue'),
+              name: 'GrossNet',
+            },
+          ],
         },
       ],
     },

@@ -7,6 +7,7 @@ placeholder="text"
   <a-input v-model="valueInput" :placeholder="placeholder" :type="type" />
 </template>
   <script>
+import './input.scss';
 export default {
   props: {
     placeholder: {

@@ -1,0 +1,11 @@
+@import "@/styles/index.scss";
+
+.noti {
+    &-header {
+        padding: 4px 8px;
+        border-radius: 8px;
+        background-color: $text-green;
+        color: $text-default;
+        font-size: 600;
+    }
+}
